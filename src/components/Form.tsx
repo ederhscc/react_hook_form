@@ -70,6 +70,52 @@ const Form = () => {
           </small>
         )}
       </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <label htmlFor="password">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Digite a sua senha"
+          {...register("password")}
+          className="h-10 pl-2 rounded-md border border-slate-300"
+        />
+        {errors.password && (
+          <small className="text-red-500 italic">
+            {errors.password.message}
+          </small>
+        )}
+      </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <label htmlFor="confirmpassword">Confirmação de senha:</label>
+        <input
+          type="password"
+          id="confirmpassword"
+          placeholder="Confirme a sua senha"
+          {...register("confirmpassword")}
+          className="h-10 pl-2 rounded-md border border-slate-300"
+        />
+        {errors.confirmpassword && (
+          <small className="text-red-500 italic">
+            {errors.confirmpassword.message}
+          </small>
+        )}
+      </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <div className="flex flex-row gap-1">
+        <input
+          type="checkbox"
+          id="agree"
+          placeholder="Confirme a sua senha"
+          {...register("agree")}
+        />
+        <label htmlFor="agree">Concordo com os termos.</label>
+        </div>
+        {errors.agree && (
+          <small className="text-red-500 italic">
+            {errors.agree.message}
+          </small>
+        )}
+      </div>
       <button
         type="submit"
         className="w-full h-11 bg-cyan-400 rounded-md my-2 hover:bg-cyan-500 transition-all"
